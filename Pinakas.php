@@ -77,7 +77,7 @@ $count = 0;
             </div>
             <!--9-->
             <div class="child9">
-                <label for="Tons for product" class="form-label">Τόνοι για Παρασκεύη:
+                <label for="Tons for product" class="form-label">Τόνοι για Παρασκεύη DMPP:
                     <input type="number" name="tons" class="form-control" id="tons"> </label>
             </div>
             <!--10-->
@@ -103,6 +103,7 @@ $count = 0;
 
                 Όνομα Dmpp : <span id="dmppname" style="border: 2px; font-size:larger; color:rgb(0, 134, 31)"></span>
                 <br>
+                <hr>
 
                 H3PO4<span id="h3po4sum" style="color: rgb(233, 10, 10)"></span><br>
 
@@ -120,7 +121,8 @@ $count = 0;
             <!--15-->
             <!--Apotelesma Diaxorismou-->
             <div class="spanDiaxorismos">
-                Όνομα Dmpp : <span id="dmppname2"></span><br>
+                Όνομα Dmpp : <span id="dmppname2" style="border: 2px; font-size:larger; color:rgb(0, 134, 31)"></span><br>
+                <hr>
 
                 H3PO4 <span id="h3po4sum1" style="color: rgb(233, 10, 10)"></span><br>
 
@@ -132,7 +134,7 @@ $count = 0;
 
                 BLUE<span id="bluesum1" style="color: rgb(32, 10, 233)"></span> <br>
 
-                Tons<span id="tons2" style="color: rgb(0, 0, 0)"></span> <br>
+                Tons<span id="tons2" style="border: 2px; font-size:larger; color:rgb(214, 0, 178)"></span> <br>
             </div>
 
         </fieldset>
@@ -144,65 +146,62 @@ $count = 0;
             <div>
                 <!-- submit button store the form to db table-->
                 <i class="far fa-save">
-                <input type="submit" value="SAVE"></i>
+                    <input type="submit" value="SAVE"></i>
             </div>
 
     </form>
 
 
     <div class="childall2">
-            <table id="table">
-                <caption>ΠΙΝΑΚΑΣ DMPP</caption>
-                <thead>
+        <table id="table">
+            <caption>ΠΙΝΑΚΑΣ DMPP</caption>
+            <thead>
+                <tr>
+                    <th>DMPP</th>
+                    <th>H3PO4</th>
+                    <th>DMP</th>
+                    <th>COLOR</th>
+                    <th>YELLOW</th>
+                    <th>BLUE</th>
+                    <th>Kilos/Tons</th>
+                    <th>L/Tons</th>
+                    <th>SELECT</th>
+                    <th>DELETE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                include('conn.php');
+                $sql = "SELECT * FROM `pinakasdmpp`";
+                $result = mysqli_query($conn, $sql);
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $count++;
+                ?>
+
                     <tr>
-                        <th>DMPP</th>
-                        <th>H3PO4</th>
-                        <th>DMP</th>
-                        <th>COLOR</th>
-                        <th>YELLOW</th>
-                        <th>BLUE</th>
-                        <th>Kilos/Tons</th>
-                        <th>L/Tons</th>
-                        <th>SELECT</th>
-                        <th>EDIT</th>
-                        <th>DELETE</th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    include('conn.php');
-                    $sql = "SELECT * FROM `pinakasdmpp`";
-                    $result = mysqli_query($conn, $sql);
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $count++;
-                    ?>
-
-                        <tr>
-                            <th> <?php echo $row['DMPP']; ?></th>
-                            <td> <?php echo $row['H3PO4']; ?></td>
-                            <td> <?php echo $row['DMP']; ?></td>
-                            <td> <?php echo $row['COLOR']; ?></td>
-                            <td> <?php echo $row['YELLOW']; ?></td>
-                            <td> <?php echo $row['BLUE']; ?></td>
-                            <td> <?php echo $row['Kilos']; ?></td>
-                            <td> <?php echo $row['Litre']; ?></td>
-                            <td><a href="#form"><i class="fas fa-check"></i></a></td>
-                            <td>
-                                <a href="edit.php?id=<?php echo $row['DMPP']; ?>"><i class="fa-solid fa-pen-to-square"></i></a>
-                            </td>
-                            <td>
+                        <th> <?php echo $row['DMPP']; ?></th>
+                        <td> <?php echo $row['H3PO4']; ?></td>
+                        <td> <?php echo $row['DMP']; ?></td>
+                        <td> <?php echo $row['COLOR']; ?></td>
+                        <td> <?php echo $row['YELLOW']; ?></td>
+                        <td> <?php echo $row['BLUE']; ?></td>
+                        <td> <?php echo $row['Kilos']; ?></td>
+                        <td> <?php echo $row['Litre']; ?></td>
+                        <td>
+                            <a href="#form"><i class="fas fa-check"></i></a>
+                        </td>
+                        <td>
                             <a href="del.php?id=<?php echo $row['DMPP']; ?>"><i class="fas fa-trash-alt"></i></a>
-                            </td>
-                        </tr>
+                        </td>
+                    </tr>
 
-                    <?php
-                    }
-                    ?>
-                </tbody>
+                <?php
+                }
+                ?>
+            </tbody>
 
-            </table>
-        
+        </table>
+
         <hr size="3" color="red">
         <div>
             Καταχωρημένες Συνταγές :<?php echo $count; ?> </div>

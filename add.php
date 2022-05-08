@@ -17,7 +17,7 @@ $stmt = $conn->prepare("insert into pinakasdmpp(DMPP, H3PO4, DMP, COLOR, YELLOW,
 	$stmt->bind_param("ssssssss",$DMPP, $H3PO4, $DMP, $COLOR, $YELLOW, $BLUE, $Kilos, $Litre);
 	$execval=$stmt->execute();
 	echo $execval;
-	echo " Επιτυχής Καταχώριση Συνταγής. Επιστροφή στην αρχική σελιδα σε 3 δευτερόλεπτα";
+	echo " Επιτυχής Καταχώρηση Συνταγής. Επιστροφή στην αρχική σελιδα σε 3 δευτερόλεπτα";
 	$stmt->close();
 	$conn->close();
     header("refresh:3;url=pinakas.php");
