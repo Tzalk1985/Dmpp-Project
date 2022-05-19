@@ -14,6 +14,9 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-header("refresh:3;url=pinakas.php");
+echo '<script>
+  const myTimeout = setTimeout(back, 3000);
+ function back(){
+  window.location = "http://www.kostastzallas.com/Pinakas.php" };</script>';
 
 ?>
