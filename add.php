@@ -20,6 +20,9 @@ $stmt = $conn->prepare("insert into pinakasdmpp(DMPP, H3PO4, DMP, COLOR, YELLOW,
 	echo " Επιτυχής Καταχώρηση Συνταγής. Επιστροφή στην αρχική σελιδα σε 3 δευτερόλεπτα";
 	$stmt->close();
 	$conn->close();
-    header("refresh:3;url=pinakas.php");
+    echo '<script>
+  const myTimeout = setTimeout(back, 3000);
+ function back(){
+  window.location = "http://www.kostastzallas.com/Pinakas.php" };</script>';
  
 ?>
