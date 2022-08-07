@@ -14,9 +14,8 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-echo '<script>
-  const myTimeout = setTimeout(back, 3000);
- function back(){
-  window.location = "http://www.kostastzallas.com/Pinakas.php" };</script>';
 
-?>
+  echo '<script>
+  const myTimeout = setTimeout(back, 3000);
+  function back(){
+  window.location = "Pinakas.php" };</script>';

@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EUROCHEM</title>
     
-    <link rel="stylesheet" href="Css/loader.css">
+    <link rel="stylesheet" href="styles/loader.css">
 </head>
 <body>
     

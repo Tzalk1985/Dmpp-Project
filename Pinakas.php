@@ -11,11 +11,14 @@ $count = 0;
 
     <script src="https://kit.fontawesome.com/5b7f4030e6.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="Css/table.css">
-    <link rel="stylesheet" href="Css/buttons.css">
-    <link rel="stylesheet" href="Css/GridContainer.css">
-    <link rel="stylesheet" href="Css/link.css">
-    <link rel="stylesheet" href="Css/nav.css">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/GridContainer.css">
+    <link rel="stylesheet" href="css/link.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/dropdown.css">
+
+
 
     <title>ΠΙΝΑΚΑΣ DMPP</title>
 </head>
@@ -27,18 +30,41 @@ $count = 0;
             <li><a href="Starter.php"><button style="--color:#53e918;">Αρική Σελίδα</button></a></li>
             <li><a class="active" href="Pinakas.php"><button style="--color:#b40aa6;">Παρασκεύη DMPP</button></a></li>
             <li><a href="#table"><button>Πίνακας DMPP</button></a></li>
+            <li><a href="index.html"><button>Portofolio</button></a></li>
         </ul>
     </div>
     <hr size="5" color="white">
     <!--flex container div for dmpp fiedset-->
 
     <!-- form submit to mysql db -->
+    <div class="dropdown">
+  <button onclick="selectedDroptoInput()" class="dropbtn">DMPP</button>
+  <div id="myDropdown" class="dropdown-content">
+  <select><?php
+                include('conn.php');
+                $sql = "SELECT * FROM `pinakasdmpp`";
+                $result = mysqli_query($conn, $sql);
+                while ($row = mysqli_fetch_assoc($result)) {
+                 
+                ?> 
+  <option> <a href="#form"><?php echo $row['DMPP']; ?></a></option>
+     
+    <?php
+                }
+                ?>
+                </select>
+  </div>
+</div>
+
+
+    </div>
+    </div>
     <form name="add" method="POST" action="add.php" id="form">
         <fieldset class="grid-container">
             <!--1-->
             <div>
                 <label for="name" class="form-label">DMPP :
-                    <input type="text" name="DMPP" class="form-control" id="DMPP" placeholder="DMPP NAME" oninput="this.value = this.value.toUpperCase()" /> </label>
+                    <input type="text" name="DMPP" class="form-control" id="DMPP" placeholder="DMPP NAME" oninput="this.value = this.value.toUpperCase()" required /> </label>
             </div>
             <!--2-->
             <div>
@@ -75,6 +101,14 @@ $count = 0;
                 <label for="litre" class="form-label">Lit/Ton</label>
                 <input step="any" name="Litre" class="form-control" id="Litre"></lable>
             </div>
+
+
+            <div class="child12">
+                <!-- submit button store the form to db table-->
+                <i class="far fa-save">
+                    <input onClick="return confirm('Are you sure you want to SAVE?')" type="submit" value="SAVE"></i>
+            </div>
+
             <!--9-->
             <div class="child9">
                 <label for="Tons for product" class="form-label">Τόνοι για Παρασκεύη DMPP:
@@ -86,7 +120,6 @@ $count = 0;
                     <input type="number" name="KKilos" class="form-control" id="KKilos"></label>
             </div>
             <!--11-->
-
 
             <!--12-->
             <div class="child9">
@@ -143,11 +176,7 @@ $count = 0;
         </div>
         <!--ADD EDIT DELETE Table elements-->
         <fieldset class="grid-container2">
-            <div>
-                <!-- submit button store the form to db table-->
-                <i class="far fa-save">
-                    <input type="submit" value="SAVE"></i>
-            </div>
+
 
     </form>
 
@@ -191,7 +220,7 @@ $count = 0;
                             <a href="#form"><i class="fas fa-check"></i></a>
                         </td>
                         <td>
-                            <a href="del.php?id=<?php echo $row['DMPP']; ?>"><i class="fas fa-trash-alt"></i></a>
+                            <a onClick="return confirm('Are you sure you want to delete?')" href="del.php?id=<?php echo $row['DMPP'];  ?>"><i class="fas fa-trash-alt"></i></a>
                         </td>
                     </tr>
 
@@ -207,12 +236,8 @@ $count = 0;
             Καταχωρημένες Συνταγές :<?php echo $count; ?> </div>
     </div>
     </fieldset>
-
-
-
-
-    <script src="Javascript/adddeletetable.js"></script>
-    <script src="Javascript/Multytontable.js"></script>
+    <script src="javascript/adddeletetable.js"></script>
+    <script src="javascript/Multytontable.js"></script>
 
 
 

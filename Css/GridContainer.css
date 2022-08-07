@@ -1,4 +1,4 @@
-input{
+input {
   font-size: 18px;
   font-weight: bold;
 }
@@ -7,11 +7,11 @@ input{
   display: grid;
   width: 800px;
   height: 600px;
-  grid-gap: 25px 30px;
+  grid-gap: 7px 5px;
   border-radius: 15px 15px;
   background-color: rgba(26, 56, 52, 0.788);
   grid-template-columns: auto auto auto auto;
-  grid-template-rows: 50px 50px 70px 50px 270px;
+  grid-template-rows: 50px 50px 40px 70px 45px;
   text-align: center;
 }
 
@@ -72,8 +72,17 @@ input{
   font-size: 20px;
   color: rgb(255, 255, 255);
 }
-/*input for tons */
+
+/*save button*/
 .grid-container > div:nth-child(9) {
+  background-color: rgb(42, 189, 118);
+  font-size: 26px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  text-align: center;
+}
+/*input for tons */
+.grid-container > div:nth-child(10) {
   background-color: rgb(253, 196, 89);
   font-size: 26px;
   color: rgb(0, 0, 0);
@@ -82,8 +91,7 @@ input{
 }
 
 /*input for kilos in reactor */
-.grid-container > div:nth-child(10) {
- 
+.grid-container > div:nth-child(11) {
   background-color: rgb(109, 7, 100);
   font-size: 26px;
   color: rgb(255, 249, 249);
@@ -92,7 +100,7 @@ input{
 }
 
 /*Υπολογισμος*/
-.grid-container > div:nth-child(11) {
+.grid-container > div:nth-child(12) {
   background-color: rgb(218, 147, 165);
   font-size: 25px;
   color: rgb(0, 0, 0);
@@ -101,7 +109,7 @@ input{
 }
 
 /*Διαχωρισμός*/
-.grid-container > div:nth-child(12) {
+.grid-container > div:nth-child(13) {
   background-color: rgb(24, 180, 58);
   font-size: 25px;
   color: rgb(0, 0, 0);
@@ -109,14 +117,14 @@ input{
   font-size: 30px;
 }
 /*Διαχωρισμος Span*/
-.grid-container > div:nth-child(13) {
+.grid-container > div:nth-child(14) {
   background-color: rgb(248, 248, 248);
   font-size: 25px;
   color: rgb(0, 0, 0);
   text-align: left;
 }
 /*Υπολογισμος Span*/
-.grid-container > div:nth-child(14) {
+.grid-container > div:nth-child(15) {
   background-color: rgb(248, 248, 248);
   font-size: 25px;
   color: rgb(0, 0, 0);
@@ -162,18 +170,25 @@ input{
 }
 
 /*Hover Διαχωρισμος*/
-.grid-container > div:nth-child(11):hover {
+.grid-container > div:nth-child(12):hover {
   background: rgba(206, 70, 165, 0.979);
-  box-shadow: 0 0 5px rgba(206, 70, 165, 0.979),
-    0 0 25px rgba(206, 70, 165, 0.979), 0 0 50px rgba(206, 70, 165, 0.979),
-    0 0 200px rgba(206, 70, 165, 0.979);
+  box-shadow: 0 0 2px rgba(206, 70, 165, 0.979),
+    0 0 2px rgba(206, 70, 165, 0.979), 0 0 2px rgba(206, 70, 165, 0.979),
+    0 0 2px rgba(206, 70, 165, 0.979);
 }
 
 /*Hover Υπολογισμος*/
-.grid-container > div:nth-child(12):hover {
+.grid-container > div:nth-child(13):hover {
   background: rgba(6, 247, 26, 0.979);
-  box-shadow: 0 0 5px rgba(6, 247, 26, 0.979), 0 0 25px rgba(6, 247, 26, 0.979),
-    0 0 50px rgba(6, 247, 26, 0.979), 0 0 200px rgba(6, 247, 26, 0.979);
+  box-shadow: 0 0 2px rgba(6, 247, 26, 0.979), 0 0 2px rgba(6, 247, 26, 0.979),
+    0 0 2px rgba(6, 247, 26, 0.979), 0 0 2px rgba(6, 247, 26, 0.979);
+}
+
+/*Save button*/
+.grid-container > div:nth-child(9):hover {
+  background: rgb(76, 255, 168);
+  box-shadow: 0 0 2px rgb(108, 255, 184), 0 0 2px rgb(98, 255, 179),
+    0 0 2px rgb(42, 189, 118), 0 0 2px rgb(42, 189, 118);
 }
 
 .grid-container2 {
@@ -182,12 +197,12 @@ input{
   height: 1700px;
   grid-gap: 25px 30px;
   border-radius: 15px 15px;
-  background-color: rgb(0, 36, 31);
+  background-color: rgb(255, 255, 255);
   grid-template-columns: auto auto auto;
-  grid-template-rows: 30px 95%;
+  grid-template-rows: 95%;
   text-align: center;
 }
-
+/*
 .grid-container2 > div:nth-child(1) {
   background-color: rgb(95, 245, 9);
   border-radius: 5px;
@@ -197,10 +212,9 @@ input{
   grid-column-start: 1;
   grid-column-end: 4;
 }
+*/
 
-
-
-.grid-container2 > div:nth-child(2) {
+.grid-container2 > div:nth-child(1) {
   background-color: rgba(255, 255, 255, 0.973);
   font-size: 25px;
   color: rgb(0, 0, 0);
@@ -238,57 +252,59 @@ input{
     border: 2px solid black;
     color: white;
   }
+
   /*DMPP*/
   .grid-container > div:nth-child(1) {
     background-color: rgb(72, 153, 25);
     font-size: 15px;
     color: rgb(255, 255, 255);
-    align-self: start;
-    grid-column-start: 1;
-    grid-column-end: 2;
+    align-self: center;
+    width: 100%;
   }
+
   /*H3PO4*/
   .grid-container > div:nth-child(2) {
     background-color: rgb(222, 245, 224);
     font-size: 15px;
     color: rgb(0, 0, 0);
-    align-self: start;
-    grid-column-start: 2;
-    grid-column-end: 3;
+    align-self: center;
+    width: 100%;
   }
+
   /*DMP*/
   .grid-container > div:nth-child(3) {
     background-color: rgb(141, 143, 8);
     font-size: 15px;
     color: rgb(255, 255, 255);
-    align-self: start;
-    grid-column-start: 1;
-    grid-column-end: 2;
+    align-self: center; 
+    width: 100%;
   }
+
   /*COLOR*/
   .grid-container > div:nth-child(4) {
     background-color: rgb(24, 128, 30);
     font-size: 15px;
     color: rgb(255, 255, 255);
-    align-self: start;
-    grid-column-start: 2;
-    grid-column-end: 3;
+    align-self: center;
+    width: 100%;
   }
+
   /*YELLOW*/
   .grid-container > div:nth-child(5) {
     background-color: rgb(251, 255, 38);
     font-size: 15px;
     color: rgb(0, 0, 0);
-    grid-column-start: 1;
-    grid-column-end: 2;
+    align-self: center;
+    width: 100%;
   }
+
   /*BLUE*/
   .grid-container > div:nth-child(6) {
     background-color: rgb(6, 43, 253);
     font-size: 15px;
     color: rgb(255, 255, 255);
-    grid-column-start: 2;
-    grid-column-end: 3;
+    align-self: center;
+    width: 100%;
   }
 
   /*Kilos/tons*/
@@ -296,8 +312,8 @@ input{
     background-color: rgb(211, 102, 12);
     font-size: 15px;
     color: rgb(255, 255, 255);
-    grid-column-start: 1;
-    grid-column-end: 2;
+    align-self: center;
+    width: 100%;
   }
 
   /*litre/tons*/
@@ -305,10 +321,11 @@ input{
     background-color: rgb(48, 151, 58);
     font-size: 15px;
     color: rgb(255, 255, 255);
-    grid-column-start: 2;
-    grid-column-end: 3;
+    align-self: center;
+    width: 100%;
   }
-  /*input for tons */
+
+  /*input for tons 
   .grid-container > div:nth-child(9) {
     background-color: rgb(253, 167, 6);
     font-size: 12px;
@@ -316,50 +333,51 @@ input{
     grid-column-start: 1;
     grid-column-end: 2;
   }
-  /*input for kilos in reactor */
-  .grid-container > div:nth-child(10) {
-    background-color: rgb(109, 7, 100);
+  */
+
+  /*save button */
+  .grid-container > div:nth-child(9) {
+    background-color: rgb(42, 189, 118);
     font-size: 15px;
     color: rgb(255, 249, 249);
-    grid-column-start: 2;
-    grid-column-end: 3;
+    align-self: center;
+    width: 100%;
   }
-  /*Υπολογισμος*/
-  .grid-container > div:nth-child(11) {
-    background-color: rgb(218, 147, 165);
+  /*Υπολογισμος input*/
+  .grid-container > div:nth-child(10) {
+    background-color: rgb(253, 196, 89);
     color: rgb(0, 0, 0);
     font-size: 15px;
-    grid-column-start: 1;
-    grid-column-end: 2;
+    align-self: center;
+    width: 100%;
   }
-  /*Διαχώρισμος*/
-  .grid-container > div:nth-child(12) {
-    background-color: rgb(24, 180, 58);
+  /*Διαχώρισμος input*/
+  .grid-container > div:nth-child(11) {
+    background-color: rgb(109, 7, 100);
     font-size: 15px;
     color: rgb(255, 255, 255);
-    grid-column-start: 2;
-    grid-column-end: 3;
+    align-self: center;
+    width: 100%;
   }
 
-  /*Υπολογισμος Spam*/
-  .grid-container > div:nth-child(13) {
-    background-color: rgb(248, 248, 248);
+  /*Υπολογισμος button*/
+  .grid-container > div:nth-child(12) {
+    background-color: rgb(218, 147, 165);
     font-size: 15px;
     color: rgb(0, 0, 0);
     font-size: small;
-    text-align: left;
-    grid-column-start: 1;
-    grid-column-end: 3;
+    text-align: center;
+    width: 100%;
   }
-  /*Διαχωρισμος Spam*/
-  .grid-container > div:nth-child(14) {
-    background-color: rgb(248, 248, 248);
+
+  /*Διαχωρισμος Button*/
+  .grid-container > div:nth-child(13) {
+    background-color: rgb(24, 180, 58);
     font-size: 15px;
     color: rgb(0, 0, 0);
     font-size: small;
-    text-align: left;
-    grid-column-start: 1;
-    grid-column-end: 3;
+    text-align: center;
+    width: 100%;
   }
 
   .child1 {
@@ -393,17 +411,10 @@ input{
   }
 
   .grid-container2 > div:nth-child(1) {
-    background-color: rgb(95, 245, 9);
-    font-size: 15px;
+    background-color: rgba(255, 255, 255, 0.973);
+    font-size: 25px;
     color: rgb(0, 0, 0);
   }
-
-  .grid-container2 > div:nth-child(2) {
-    background-color: rgb(255, 255, 255);
-    font-size: 15px;
-    color: rgb(0, 0, 0);
-  }
-
   .grid-container2 > div {
     background-color: blueviolet;
     font-size: 15px;
@@ -439,5 +450,3 @@ input{
     float: left;
   }
 }
-
-

@@ -15,14 +15,16 @@ $Litre = $_POST['Litre'];
 $stmt = $conn->prepare("insert into pinakasdmpp(DMPP, H3PO4, DMP, COLOR, YELLOW, BLUE, Kilos, Litre)
 	     values(?,?,?,?,?,?,?,?)");
 	$stmt->bind_param("ssssssss",$DMPP, $H3PO4, $DMP, $COLOR, $YELLOW, $BLUE, $Kilos, $Litre);
+
 	$execval=$stmt->execute();
 	echo $execval;
 	echo " Επιτυχής Καταχώρηση Συνταγής. Επιστροφή στην αρχική σελιδα σε 3 δευτερόλεπτα";
 	$stmt->close();
 	$conn->close();
-    echo '<script>
+echo '<script>
   const myTimeout = setTimeout(back, 3000);
  function back(){
-  window.location = "http://www.kostastzallas.com/Pinakas.php" };</script>';
+  window.location = "Pinakas.php" };</script>';
+    
  
 ?>
