@@ -11,12 +11,12 @@ $count = 0;
 
     <script src="https://kit.fontawesome.com/5b7f4030e6.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="css/table.css">
-    <link rel="stylesheet" href="css/buttons.css">
-    <link rel="stylesheet" href="css/GridContainer.css">
-    <link rel="stylesheet" href="css/link.css">
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/dropdown.css">
+    <link rel="stylesheet" href="styles/table.css">
+    <link rel="stylesheet" href="styles/buttons.css">
+    <link rel="stylesheet" href="styles/GridContainer.css">
+    <link rel="stylesheet" href="styles/link.css">
+    <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="styles/dropdown.css">
 
 
 
@@ -37,28 +37,27 @@ $count = 0;
     <!--flex container div for dmpp fiedset-->
 
     <!-- form submit to mysql db -->
-    <div class="dropdown">
-  <button onclick="selectedDroptoInput()" class="dropbtn">DMPP</button>
-  <div id="myDropdown" class="dropdown-content">
-  <select><?php
-                include('conn.php');
-                $sql = "SELECT * FROM `pinakasdmpp`";
-                $result = mysqli_query($conn, $sql);
-                while ($row = mysqli_fetch_assoc($result)) {
-                 
-                ?> 
-  <option> <a href="#form"><?php echo $row['DMPP']; ?></a></option>
-     
-    <?php
-                }
+        <div class="dropdown">
+        <button onclick="selectedRowToInput()" class="dropbtn">DMPP</button>
+        <div id="myDropdown" class="dropdown-content">
+            <select class="select"><?php
+                    include('conn.php');
+                    $sql = "SELECT * FROM `pinakasdmpp`";
+                    $result = mysqli_query($conn, $sql);
+                    while ($row = mysqli_fetch_assoc($result)) {
+
+                    ?>
+                    <a href="#form">
+                        <option class="option" onclick="selectedRowToInput()"> <?php echo $row['DMPP']; ?></option>
+                    </a>
+
+                <?php
+                    }
                 ?>
-                </select>
-  </div>
-</div>
-
-
+            </select>
+        </div>
     </div>
-    </div>
+
     <form name="add" method="POST" action="add.php" id="form">
         <fieldset class="grid-container">
             <!--1-->
@@ -220,7 +219,7 @@ $count = 0;
                             <a href="#form"><i class="fas fa-check"></i></a>
                         </td>
                         <td>
-                            <a onClick="return confirm('Are you sure you want to delete?')" href="del.php?id=<?php echo $row['DMPP'];  ?>"><i class="fas fa-trash-alt"></i></a>
+                            <a id="delete" onClick="return confirm('Are you sure you want to DELETE?')" href="del.php?id=<?php echo $row['DMPP'];  ?>"><i class="fas fa-trash-alt"></i></a>
                         </td>
                     </tr>
 
