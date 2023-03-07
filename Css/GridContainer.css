@@ -1,3 +1,7 @@
+.spanYpologismos {
+  text-align: center;
+}
+
 input {
   font-size: 18px;
   font-weight: bold;
@@ -5,13 +9,13 @@ input {
 
 .grid-container {
   display: grid;
-  width: 800px;
+  width: 1000px;
   height: 600px;
   grid-gap: 7px 5px;
   border-radius: 15px 15px;
   background-color: rgba(26, 56, 52, 0.788);
   grid-template-columns: auto auto auto auto;
-  grid-template-rows: 50px 50px 40px 70px 45px;
+  grid-template-rows: 80px 80px 40px 70px 45px;
   text-align: center;
 }
 
@@ -118,17 +122,17 @@ input {
 }
 /*Διαχωρισμος Span*/
 .grid-container > div:nth-child(14) {
+  text-align: center;
   background-color: rgb(248, 248, 248);
   font-size: 25px;
   color: rgb(0, 0, 0);
-  text-align: left;
 }
 /*Υπολογισμος Span*/
 .grid-container > div:nth-child(15) {
   background-color: rgb(248, 248, 248);
   font-size: 25px;
   color: rgb(0, 0, 0);
-  text-align: left;
+  text-align: center;
 }
 
 /*action buttons*/
@@ -245,6 +249,8 @@ input {
     text-align: center;
   }
 
+  
+
   .grid-container > div {
     background-color: blueviolet;
     font-size: 15px;
@@ -258,8 +264,10 @@ input {
     background-color: rgb(72, 153, 25);
     font-size: 15px;
     color: rgb(255, 255, 255);
-    align-self: center;
+    text-align: center;
     width: 100%;
+    font-weight: bold;
+    float: left;
   }
 
   /*H3PO4*/
@@ -267,8 +275,10 @@ input {
     background-color: rgb(222, 245, 224);
     font-size: 15px;
     color: rgb(0, 0, 0);
-    align-self: center;
+    text-align: center;
     width: 100%;
+    font-weight: bold;
+    float: left;
   }
 
   /*DMP*/
@@ -276,8 +286,10 @@ input {
     background-color: rgb(141, 143, 8);
     font-size: 15px;
     color: rgb(255, 255, 255);
-    align-self: center; 
+    text-align: center;
     width: 100%;
+    font-weight: bold;
+    float: left;
   }
 
   /*COLOR*/
@@ -285,7 +297,7 @@ input {
     background-color: rgb(24, 128, 30);
     font-size: 15px;
     color: rgb(255, 255, 255);
-    align-self: center;
+    text-align: center;
     width: 100%;
   }
 
@@ -294,7 +306,7 @@ input {
     background-color: rgb(251, 255, 38);
     font-size: 15px;
     color: rgb(0, 0, 0);
-    align-self: center;
+    text-align: center;
     width: 100%;
   }
 
@@ -303,7 +315,7 @@ input {
     background-color: rgb(6, 43, 253);
     font-size: 15px;
     color: rgb(255, 255, 255);
-    align-self: center;
+    text-align: center;
     width: 100%;
   }
 
@@ -365,7 +377,6 @@ input {
     background-color: rgb(218, 147, 165);
     font-size: 15px;
     color: rgb(0, 0, 0);
-    font-size: small;
     text-align: center;
     width: 100%;
   }
@@ -375,7 +386,6 @@ input {
     background-color: rgb(24, 180, 58);
     font-size: 15px;
     color: rgb(0, 0, 0);
-    font-size: small;
     text-align: center;
     width: 100%;
   }
