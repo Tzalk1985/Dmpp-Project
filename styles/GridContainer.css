@@ -106,7 +106,7 @@ input {
 /*Υπολογισμος*/
 .grid-container > div:nth-child(12) {
   background-color: rgb(218, 147, 165);
-  font-size: 25px;
+  
   color: rgb(0, 0, 0);
   font-weight: bold;
   font-size: 30px;
@@ -115,10 +115,10 @@ input {
 /*Διαχωρισμός*/
 .grid-container > div:nth-child(13) {
   background-color: rgb(24, 180, 58);
-  font-size: 25px;
   color: rgb(0, 0, 0);
   font-weight: bold;
   font-size: 30px;
+  
 }
 /*Διαχωρισμος Span*/
 .grid-container > div:nth-child(14) {
@@ -197,13 +197,13 @@ input {
 
 .grid-container2 {
   display: grid;
-  width: 600px;
-  height: 1700px;
+  width: 1015px;
+  height: auto;
   grid-gap: 25px 30px;
   border-radius: 15px 15px;
   background-color: rgb(255, 255, 255);
   grid-template-columns: auto auto auto;
-  grid-template-rows: 95%;
+  grid-template-rows: 100%;
   text-align: center;
 }
 /*
@@ -237,7 +237,7 @@ input {
   grid-column-end: 4;
 }
 
-@media screen and (max-device-width: 400px) {
+@media screen and (max-device-width: 480px) {
   .grid-container {
     display: flex;
     flex-direction: column;
@@ -249,7 +249,9 @@ input {
     text-align: center;
   }
 
-  
+  .grid-container input {
+    width: 280px;
+  }
 
   .grid-container > div {
     background-color: blueviolet;
@@ -259,6 +261,8 @@ input {
     color: white;
   }
 
+
+  
   /*DMPP*/
   .grid-container > div:nth-child(1) {
     background-color: rgb(72, 153, 25);
@@ -299,6 +303,8 @@ input {
     color: rgb(255, 255, 255);
     text-align: center;
     width: 100%;
+    font-weight: bold;
+    float: left;
   }
 
   /*YELLOW*/
@@ -308,6 +314,8 @@ input {
     color: rgb(0, 0, 0);
     text-align: center;
     width: 100%;
+    font-weight: bold;
+    float: left;
   }
 
   /*BLUE*/

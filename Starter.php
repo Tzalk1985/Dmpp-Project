@@ -13,7 +13,7 @@
 </head>
 <body>
     
-    
+<div class="spinner"></div>
     
     <h1><a href="Pinakas.php">
     <div class="loader">
@@ -28,6 +28,6 @@
         <span>EUROCHEM</span>      
     </div></a></h1><br>
 
-
+    
 </body>
 </html>

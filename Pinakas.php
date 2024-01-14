@@ -12,7 +12,7 @@ $count = 0;
     <script src="https://kit.fontawesome.com/5b7f4030e6.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="styles/table.css">
-    <link rel="stylesheet" href="styles/buttons.css">
+
     <link rel="stylesheet" href="styles/GridContainer.css">
     <link rel="stylesheet" href="styles/link.css">
     <link rel="stylesheet" href="styles/nav.css">
@@ -27,8 +27,8 @@ $count = 0;
 
     <div class="nav">
         <ul>
-            <li><a href="Starter.php"><button style="--color:#53e918;">Αρική Σελίδα</button></a></li>
-            <li><a class="active" href="Pinakas.php"><button style="--color:#b40aa6;">Παρασκεύη DMPP</button></a></li>
+            <li><a href="Starter.php"><button>Αρική Σελίδα</button></a></li>
+            <li><a class="active" href="Pinakas.php"><button>Παρασκεύη DMPP</button></a></li>
             <li><a href="#table"><button>Πίνακας DMPP</button></a></li>
             <li><a href="index.html"><button>Portofolio</button></a></li>
         </ul>
@@ -37,26 +37,32 @@ $count = 0;
     <!--flex container div for dmpp fiedset-->
 
     <!-- form submit to mysql db -->
-        <div class="dropdown">
-        <button onclick="selectedRowToInput()" class="dropbtn">DMPP</button>
-        <div id="myDropdown" class="dropdown-content">
-            <select class="select"><?php
-                    include('conn.php');
-                    $sql = "SELECT * FROM `pinakasdmpp`";
-                    $result = mysqli_query($conn, $sql);
-                    while ($row = mysqli_fetch_assoc($result)) {
+    <form name="dropForm">
+        <select name="dropSelect"><?php
+                                                            include('conn.php');
+                                                            $sql = "SELECT * FROM `pinakasdmpp`";
+                                                            $result = mysqli_query($conn, $sql);
+                                                            while ($row = mysqli_fetch_assoc($result)) {
+                                                            ?>
+                <a href="#form">
 
-                    ?>
-                    <a href="#form">
-                        <option class="option" onclick="selectedRowToInput()"> <?php echo $row['DMPP']; ?></option>
-                    </a>
+                    <option class="option">DMPP: <?php echo $row['DMPP']; ?></option>
+                    <option>H3PO4:<?php echo $row['H3PO4']; ?></option>
+                    <option>DMP: <?php echo $row['DMP']; ?></option>
+                    <option>COLOR: <?php echo $row['COLOR']; ?></option>
+                    <option>YELLOW: <?php echo $row['YELLOW']; ?></option>
+                    <option>BLUE: <?php echo $row['BLUE']; ?></option>
+                    <option>Kilos/Tons: <?php echo $row['Kilos']; ?></option>
+                    <option>L/Tons: <?php echo $row['Litre']; ?></option>
+                </a>
 
-                <?php
-                    }
-                ?>
-            </select>
-        </div>
-    </div>
+            <?php
+                                                            }
+            ?>
+        </select>
+    </form>
+
+
 
     <form name="add" method="POST" action="add.php" id="form">
         <fieldset class="grid-container">
@@ -218,8 +224,8 @@ $count = 0;
                         <td>
                             <a href="#form"><i class="fas fa-check"></i></a>
                         </td>
-                        <td>
-                            <a id="delete" onClick="return confirm('Are you sure you want to DELETE?')" href="del.php?id=<?php echo $row['DMPP'];  ?>"><i class="fas fa-trash-alt"></i></a>
+                        <td>   
+                        <a href="#" onclick="checkPasswordAndOpenLink(event, '<?php echo $row['DMPP']; ?>')"><i class="fas fa-trash-alt"></i></a>
                         </td>
                     </tr>
 

@@ -12,11 +12,15 @@ a {
   color: rgb(0, 0, 0);
 }
 caption {
+  font-family:'Times New Roman', Times, serif;
   font-size: 50px;
-  color: #ffffff;
-  border: 5px solid rgb(188, 255, 3);
-  border-radius: 8px;
-  background-color: rgb(21, 51, 23);
+  border-bottom:solid 2px #090000;
+  border-color: #090000;
+  
+  
+  
+  
+  background-color: rgb(166, 235, 171);
 }
 tr {
   transition: all 0.2s ease-in-out;
@@ -24,19 +28,20 @@ tr {
 }
 
 th {
-  border: 3px solid rgb(2, 26, 2);
+  border: 1.5px solid rgba(19, 19, 19, 0.872);
   padding: 10px;
+  border-radius: 5px;
   font-size: 20px;
   text-align: center;
-  color: rgb(0, 0, 0);
+  color: rgb(3, 14, 74);
 }
 
 td {
-  border: 2px solid rgb(0, 0, 0);
+  border: 0.5px solid rgba(75, 72, 72, 0.502);
   color: rgb(0, 0, 0);
   font-size: 20px;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 0px;
 }
 
 tbody tr:hover {
